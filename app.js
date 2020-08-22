@@ -11,7 +11,10 @@ mongoose
   .then(() => console.log('connected to mongodb successfully'))
   .catch(err => console.log(err))
 
-app.get('/', (req, res) => res.send('How you doin, World?!?! Okurrr!!!'))
+app.get('/', (req, res) => {
+  console.log(res)
+  res.send('How you doin, World?!?! Okurrr!!!')
+})
 app.use("/api/users", users)
 app.use("/api/posts", posts)
 
