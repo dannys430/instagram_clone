@@ -15,11 +15,13 @@ app.get('/', (req, res) => {
   console.log(res)
   res.send('How you doin, World?!?! Okurrr!!!')
 })
-app.use("/api/users", users)
-app.use("/api/posts", posts)
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+
+app.use("/api/users", users)
+app.use("/api/posts", posts)
+
 
 const port = process.env.PORT || 5000
 
